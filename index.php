@@ -8,5 +8,8 @@
 <p> hello!
 </p>
 
+<h4>Links:</h4>
+<a href="labs/lab1/home/index.php">Lab 1</a>
+
     </body>
 </html>
