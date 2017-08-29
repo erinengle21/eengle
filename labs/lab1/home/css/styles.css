@@ -1,0 +1,105 @@
+/*Stylesheet for home page*/
+
+#navigation {
+    
+    font-family: "Arial Black", Gadget, sans-serif;
+    float: left;
+    list-style-type: none;
+    background-color: #0D8896;
+    height: 670px;
+    margin-top: -10px;
+    margin-left: -10px;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Change the link color on hover */
+
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+li:active {
+    background-color: yellow;
+}
+
+#standOut {
+    color: white;
+
+}
+
+#myImage {
+    float: right;
+    margin-right: 200px;
+    margin-top: -70px;
+}
+
+#content {
+    margin-top: 120px;
+    margin-left: 180px;
+
+}
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #88c26e;
+    text-align: right;
+}
+
+#title {
+    font-size: 400%;
+    margin-left: 90px;
+
+
+}
+
+
+#paragraph {
+    font-family: optima;
+    margin-left: 100px;
+
+}
+
+.listColor {
+
+    color: #9f0a95;
+}
+
+#topBar {
+    position: initial;
+    margin-right: -10px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-bottom: -70px;
+    padding: 1rem;
+    background-color: #88c26e;
+    text-align: left;
+    padding-left: 250px;
+    color: white;
+
+}
+
+#statements {
+    margin-left: 100px;
+    
+}
