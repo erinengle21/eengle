@@ -1,86 +1,3 @@
-/*home page css*/
-
-/*body {*/
-/* background-color: #000000;*/
-/* color: gray;*/
-/*}*/
-
-/*header,nav{*/
-/* text-align: center;*/
-/*}*/
-
-/*footer {*/
-/* clear: left;*/
-/*}*/
-
-/*table {*/
-/* margin: 0px auto;*/
-
-/*}*/
-
-/*td {*/
-/* padding-right: 10px;*/
-/* font-size: 1.3em;*/
-
-/*}*/
-
-/*td strong {*/
-/* color: orange;*/
-
-/*}*/
-
-/*#table-header {*/
-/* background-color: #351a00;*/
-
-/*}*/
-
-/*.table-row {*/
-/* background-color: #753900;*/
-
-/*}*/
-
-/*nav a {*/
-/* padding: 15px;*/
-/* padding-bottom: 4px;*/
-/* font-size: 1.8em;*/
-/* text-decoration: none;*/
-/* color: white;*/
-/*}*/
-
-/*n a:hover {*/
-/* border-bottom: 2px orange solid;*/
-/* font-size: 2em;*/
-/* transition: .9s;*/
-/*}*/
-
-/*#profilePic,*/
-/*#profileText {*/
-/* float: left;*/
-/*}*/
-
-/*ul {*/
-/* text-align: left;*/
-/* padding-left: 200px;*/
-
-/*}*/
-
-/*.hobby {*/
-
-/* color: yellow;*/
-/*}*/
-
-/*h1 {*/
-/* font-family: 'Pacifico', cursive;*/
-/* font-size: 4em;*/
-/* margin-bottom: 0px;*/
-
-/*}*/
-
-/*img {*/
-/* height: 500px;*/
-/* width: 330px;*/
-/*}*/
-
 
     header, nav, footer, #content {
         width: 960px;
@@ -150,6 +67,7 @@
     
     #profilePic {
         border-radius: 100px;
+        size: 50%;
     }
     
     #table-header {
@@ -166,3 +84,4 @@
     #footerLogo {
    float:left;
     }
+    
