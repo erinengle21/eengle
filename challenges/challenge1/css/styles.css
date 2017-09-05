@@ -1,0 +1,40 @@
+/*challenge 1 stylesheet*/
+
+     #header {
+       font-family: 'Pacifico', cursive;
+      color: yellow;
+     }
+     
+     h1{
+      font-family: 'Pacifico', cursive;
+      font-size: 4em;
+      margin-bottom: 0px;
+      
+     }
+     body {
+         background-color: black;
+        
+     }
+     
+     img {
+        height:200px;
+        width: 200px;
+    
+     }
+     
+     #fall{
+        border-bottom-left-radius: 2em;
+     }
+     #winter{
+         border-bottom-right-radius: 2em;
+     }
+     #summer{
+         border-top-right-radius: 2em;
+     }
+     #spring {
+        border-top-left-radius: 2em;
+     }
+     div{
+         
+         display: inline-table;
+     }

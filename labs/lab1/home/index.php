@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <title>Home </title>
          <meta charset="UTF-8">
-        <title>Home </title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
