@@ -32,8 +32,9 @@ li a:hover {
 
 
    
-    display: inline-block;
-     font-family: 'Shadows Into Light', cursive;
+    display: inline;
+    font-family: 'Permanent Marker', cursive;
+     /*font-family: 'Permanent Marker', cursive;*/
      font-weight: 800;
      font-size: 130%;
      color: #20299A;
@@ -49,7 +50,7 @@ li a:hover {
 #aboutContent {
     
     color: #20299A;
-   font-family: 'Shadows Into Light', cursive;
+   font-family: 'Permanent Marker', cursive;
      font-weight: 800;
      font-size: 130%;
      text-shadow: inherit;
@@ -59,7 +60,7 @@ li a:hover {
 
     table, th, td {
     border: 1px solid black;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Permanent Marker', cursive;
     font-size: 110%;
     color: blue;
     
