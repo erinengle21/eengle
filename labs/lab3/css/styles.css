@@ -17,3 +17,15 @@ img {
 .game {
 	font-size: 2em;
 }
+.pointStyle {
+   font-size: 150%;
+   font-weight: bold;
+   display: inline;
+
+}
+
+p {
+    font-size: 150%;
+    font-weight: bold;
+    display: inline-block;
+}
