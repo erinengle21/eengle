@@ -41,8 +41,8 @@ function displayHand() {
         else {
             echo "<img src='img/$cardSuit/$cardValue.png' alt='Ace' />";
         }
-        echo " points " . $handPoints;
-        echo " Acs: " . $handAces;
+        // echo " points " . $handPoints;
+        // echo " Acs: " . $handAces;
         // echo $lastCard % 13 . " ";
         $handPoints = $handPoints + $cardValue;
         //$handPoints += $cardValue;   shortcut to add value
@@ -50,7 +50,7 @@ function displayHand() {
         //  echo "<img class='ace' src='img/$cardSuit/$cardValue.png' alt='Ace' />";
     } //ending for loop
     
-    echo $handPoints;
+    echo '<div class="pointStyle">' . "Points: " . $handPoints . '</div>';
     
     $totalPoints = $totalPoints + $handPoints;
     
@@ -59,7 +59,7 @@ function displayHand() {
 }
 
 function identifyWinner(){
-    // global $player1Aces, $player2Aces;
+    global $player1Aces, $player2Aces;
     
       if ($player1Aces > $player2Aces){
         echo "Player 1";
@@ -67,7 +67,7 @@ function identifyWinner(){
     else if ($player1Aces < $player2Aces) {
         echo "Player 2";
     } else {
-        echo "Nobody Wins";
+        echo "Nobody";
     }
 }
 
@@ -84,20 +84,24 @@ function identifyWinner(){
     <h1>Ace Poker</h1>
     <h2>Player with more aces wins all points</h2>
     <div id="game">
+   <p>Player 1</p>
     <?php
     
    $player1Aces = displayHand();
     ?>
     <br>
+      <p>Player 2</p>
     <?php
    $player2Aces =  displayHand();
     ?>
-    <h2>Wins:
-    <?=$totalPoints?> points!
-    
+     <h2>
     <?php 
 identifyWinner($player1Aces, $player2Aces);
     ?>
+    
+   Wins:
+    <?=$totalPoints?> points!
+    
     </h2>
     </div>
 </div>
