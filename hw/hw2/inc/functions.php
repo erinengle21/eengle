@@ -30,10 +30,12 @@ function displayScore($humPlay, $comPlay){
 $humScore = array("");
 $comScore = array("");
 
-print_r($humScore);
-print_r($comScore);
+
+echo '<div id=#computer>' . print_r($humScore) .'</div>';
+echo '<div id=#computer>' . print_r($comScore) .'</div>';
+
 if ($humPlay == rock && $comPlay == scissors) {
-// array_push($humScore,"X"); //human gets points
+array_push($humScore,"X"); //human gets points
 
 }
 else if ($humPlay == rock && $comPlay == paper) {
@@ -46,6 +48,9 @@ array_push($humScore,"X"); //human gets point
 }
 
 }
+
+
+
 function playGame($humPlay, $comPlay){
 if (count($comScore)  > 2){
 echo "Computer Wins!";
@@ -58,8 +63,8 @@ echo "It's a tie! Try again.";
 }
 
    for ($i = 1; $i < 2; $i++){ //Without this for loop, images would not display.
-            ${"randomValue" . $i} = rand (1, 3);
-            displayItem(${"randomValue" . $i}, $i);
+            ${"value" . $i} = rand (1, 3);
+            displayItem(${"value" . $i}, $i);
         }
 
 

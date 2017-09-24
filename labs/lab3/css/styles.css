@@ -1,0 +1,19 @@
+#content{
+	width:950px;
+	margin:0 auto;
+	text-align:center;
+}
+
+img {
+	width:15%;
+	padding-right:2px;
+	vertical-align:center;
+}
+
+.ace {
+	border:5px solid yellow;
+}
+
+.game {
+	font-size: 2em;
+}
