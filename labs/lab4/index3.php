@@ -11,16 +11,20 @@ if (isset ($_GET['keyword'])){
     include 'api/pixabayAPI.php';
     $keyword = $_GET['keyword'];
     
-    if(!empty($_GET['category'])){
-        $keyword = $_GET['category'];
-    }
-     if (isset($_GET['layout'])) {
-        $imageURLs = getImageURLs($keyword, $_GET['layout']);
-    } else {
+ if (!empty($_GET['category'])){//an option was selected in drop down menu
+       $keyword = $_GET['category'];
+   }
+    //  if (isset($_GET['layout'])) {
+    //     $imageURLs = getImageURLs($keyword, $_GET['layout']);
+    // }
+       if (isset($_GET['layout'])){
+         $imageURLs = getImageURLs($_GET['keyword'],  $_GET['layout']);
+
+    }else {
          $imageURLs = getImageURLs($keyword);
     }
     
-    echo "You searched for: " .$_GET['keyword'];
+    echo "You searched for: " . $_GET['keyword'];
     
     $imageURLs = getImageURLs($_GET['keyword']);
   $backgroundImage = $imageURLs[array_rand($imageURLs)];
@@ -109,12 +113,7 @@ for ($i = 0; $i < 7; $i++){
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <!--<div class="item active">-->
-      <!--<img src="<?=$imageURLs[0]?>" alt="...">-->
-      <!--<div class="carousel-caption">-->
-      <!--  ...-->
-      <!--</div>-->
-    <!--</div>-->\
+
     <?php
 //     for ($i = 0; $i < 7; $i++){
 //     echo "<div class='item'>";
