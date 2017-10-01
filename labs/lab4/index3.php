@@ -1,11 +1,14 @@
 <?php
+$backgroundImage = "img/sea.jpg";
 //API call here:
-include 'api/pixabayAPI.php';
+
+
 if (isset ($_GET['keyword'])){
     echo "keyword types:" . $_GET['keyword'] . "<br />";
     echo "layout selected:" . $_GET['layout'] . "<br />";
      echo "category selected:" . $_GET['category'] . "<br />";
-    
+ 
+    include 'api/pixabayAPI.php';
     $keyword = $_GET['keyword'];
     
     if(!empty($_GET['category'])){
@@ -21,6 +24,13 @@ if (isset ($_GET['keyword'])){
     
     $imageURLs = getImageURLs($_GET['keyword']);
   $backgroundImage = $imageURLs[array_rand($imageURLs)];
+  
+
+
+
+    
+
+
 }
 
 ?>
