@@ -163,32 +163,31 @@
 <script type="text/javascript" src="SmartWizard-master/dist/js/jquery.smartWizard.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-          function onFinishCallback(){
+//           function onFinishCallback(){
 
- $.ajax({
-   type:'POST',
-   url: 'index.php',
-   cache: false,
-   success: function(){
-   alert("successful post");
- },
+//  $.ajax({
+//   type:'POST',
+//   url: 'index.php',
+//   cache: false,
+//   success: function(){
+//   alert("successful post");
+//  },
 
- error: function(){
-     alert("Failed to post");
- }
+//  error: function(){
+//      alert("Failed to post");
+//  }
 
-});
-}
+// });
+// }
   $('#smartwizard').smartWizard({  selected: 0,  // Initial selected step, 0 = first step 
             keyNavigation:true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
-            autoAdjustHeight:true, // Automatically adjust content height
             cycleSteps: false, // Allows to cycle the navigation of steps
             backButtonSupport: true, // Enable the back button support
             useURLhash: true, // Enable selection of the step based on url hash
-            lang: {  // Language variables
-                next: 'Next', 
-                previous: 'Previous'
-            },
+            // lang: {  // Language variables
+            //     next: 'Next', 
+            //     previous: 'Previous'
+            // },
             toolbarSettings: {
                 toolbarPosition: 'bottom', // none, top, bottom, both
                 toolbarButtonPosition: 'right', // left, right
@@ -199,14 +198,16 @@ $(document).ready(function(){
                 toolbarExtraButtons: [
 			$('<button></button>').text('Finish')
 					      .addClass('btn btn-info')
-					   //   .on('click', onFinishCallback()),
+					      .attr('type', 'submit')
+					      
+					   //   .on('click', onFinishCallback())
 				// 		alert('Finsih button click');  
 			
 	
  				    
                       ]
             }, 
-                onFinish: onFinishCallback,
+                // onFinish: onFinishCallback,
             anchorSettings: {
                 anchorClickable: true, // Enable/Disable anchor navigation
                 enableAllAnchors: false, // Activates all anchors clickable all times

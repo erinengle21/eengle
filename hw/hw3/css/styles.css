@@ -1,2 +1,36 @@
 /*hw 3 styles*/
 
+html {
+  /*background-color: rgba(200, 15, 15, 1) !important;*/
+  background-image: url("http://www.xsjjys.com/data/out/88/WHDQ-512321463.jpg");
+
+}
+ body{
+   margin-top: 200px;
+      background-color: rgba(255, 255, 255, .6);
+     align-content: center;
+ } 
+
+form {
+   /*background-color: transparent; */
+   /*background-color: rgba(0, 0, 0, 0);*/
+   text-align: center;
+}
+
+nav {
+   text-align: center;
+   /*background-color: rgba(0, 0, 0, 0);*/
+}
+ul {
+   text-align: center;
+     /*background-color: rgba(0, 0, 0, 0);*/
+}
+h4 {
+   text-align: center;
+     /*background-color: rgba(0, 0, 0, 0);*/
+}
+
+#results {
+   align-content: center;
+  
+}

@@ -58,8 +58,13 @@ function getName(){
 <html>
     <head>
         <title> Results</title>
+                      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!--<link href="SmartWizard-master/dist/css/smart_wizard.css" rel="stylesheet" type="text/css" /> -->
+          <link href="css/styles.css" rel="stylesheet" type="text/css" /> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body>
+        <div id="results">
 <?php echo $_POST['firstName'];
 echo $_POST['lastName'];
 echo $_POST['gender'];
@@ -74,5 +79,6 @@ colorStick();
  
  <br>
 <p>Hello <?=getName()?>!</p>
+</div>
     </body>
 </html>
