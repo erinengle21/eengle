@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body>
+       <h1> Lacrosse Sign Up!</h1>
         <form class="laxForm"  method="POST" action="results.php">
 <div id="smartwizard">
     <ul>
@@ -21,18 +22,18 @@
         <div id="step-1" class="">
         
   <div class="row">
-    <div class="col-md-7  offset-md-4">
+    <div class="col-md-7  offset-md-3">
       <label for="validationServer01">First name</label>
       <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" name="firstName"  required>
     </div>
     </br>
-    <div class="col-md-7 offset-md-4">
+    <div class="col-md-7 offset-md-3">
       <label for="validationServer02">Last name</label>
       <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" name="lastName" required>
     </div>
     </br>
     </br>
-     <div class="col-md-7 offset-md-4">
+     <div class="col-md-7 offset-md-3">
       <label for="validationServer02">Email</label>
       <input type="text" class="form-control is-valid" id="validationServer03" placeholder="Email" name="email" required>
     </div>
