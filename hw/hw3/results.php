@@ -3,18 +3,15 @@
 //     height, gender, color, dayOfWeek, firstName, lastName, email, mileTime]
 function getGender(){
     $gender = $_POST["gender"];
-    if ($gender == male){
-        echo "Unfortunately Womens Lacrosse has completely different rules from mens lacrosse. We apologize, but you cannot play with us. Goodbye!";
+    if ($gender ='male'){
+        echo "<div id='gender'><h1>Unfortunately Womens Lacrosse has completely different rules from mens lacrosse. We apologize, but you cannot play with us.</div></h1>";
     }
-  
+    
+ 
      
     
 }
 function getName(){
-    //email
-   //firstName
-   //lastName
-   //Dont need function for these...just want to get the info
    if (!isset($_POST['firstName'])){
        echo "Person";
    }
@@ -24,6 +21,33 @@ function getName(){
    }
 }
 
+   function mileTime(){
+    $mileTime = $_POST['mileTime'];
+   if ($mileTime <= 7){
+       echo "You should be a midfielder! Midfielders are really fast.";
+   }
+   else if ($mileTime > 7 && $mileTime <=9.5){
+       echo "you should play defense! Theyre pretty fast.";
+   }
+   else {
+       echo "you would be a pretty good goalie!";
+   }
+}
+function dayOfWeek(){
+    $dayOfWeek = $_POST['dayOfWeek'];
+    // if (!isset $dayOfWeek == "tuesday" && $dayOfWeek == "thursday"){
+    if ($dayofWeek != "thursday" && dayofWeek != "tuesday"){
+     echo "You cannot play with us because you are not available. We only practice on Tuesdays and Thursdays. Sorry.";   
+    }
+    else {
+        echo "Yay! It looks like you are available to play. We practice 12-2 on Tuesdays and Thursdays";
+    }
+}
+function colorStick(){
+ $color = $_POST['color'];
+ echo "<img src='img/" .$color . ".jpg' height='300px' width='250px'>";
+}
+    
     
 
 ?>
@@ -41,7 +65,7 @@ function getName(){
         <div id="results">
 <?php 
 
-echo $_POST['dayOfWeek'];
+
 
 getGender();
 
@@ -50,8 +74,8 @@ getGender();
  ?>
  
  <br>
-<h3>Hello <?=getName()?>! Based on your mile time, it looks like <?=mileTime()?> </br> If you feel like you would like to play on the team, and would like your
-own stick, here is a nice one: <?= colorStick()?></h3>
+<h3>Hello <?=getName()?>! Based on your height and speed, it looks like <?=mileTime()?> </br> If you feel like you would like to play on the team, and would like your
+own stick, here is a nice one: <?= colorStick()?><br><?=dayOfWeek()?></h3>
 </div>
     </body>
 </html>
