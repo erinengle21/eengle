@@ -18,7 +18,7 @@
 
     <div>
         <div id="step-1" class="">
-        <form id="laxForm"  method="POST" action="results.php">
+        <form class="laxForm"  method="POST" action="results.php">
   <div class="row">
     <div class="col-md-7  offset-md-4">
       <label for="validationServer01">First name</label>
@@ -56,7 +56,7 @@
         <div id="step-2" class="">
            
           <h4> What is your mile time?</h4>
-            <form id="laxForm" method="POST" action="results.php">
+            <form class="laxForm" method="POST" action="results.php">
             <select class="custom-select" name="mileTime" type="number">
   <option selected>Select amount of minutes</option>
   <option value="<5">< 5</option>
@@ -100,7 +100,7 @@
 </form>
         </div>
         <div id="step-3" class="">
-            <form id="laxForm" method="POST" action="results.php">
+            <form class="laxForm" method="POST" action="results.php">
          <h4> What is your favorite color?</h4> <!--radio-->
             <select class="custom-select" name="color">
   <option selected>Select Color</option>
@@ -184,27 +184,28 @@ $(document).ready(function(){
             cycleSteps: false, // Allows to cycle the navigation of steps
             backButtonSupport: true, // Enable the back button support
             useURLhash: true, // Enable selection of the step based on url hash
-            // lang: {  // Language variables
-            //     next: 'Next', 
-            //     previous: 'Previous'
-            // },
+            lang: {  // Language variables
+                next: 'Next', 
+                previous: 'Previous'
+            },
             toolbarSettings: {
                 toolbarPosition: 'bottom', // none, top, bottom, both
                 toolbarButtonPosition: 'right', // left, right
                 showNextButton: true, // show/hide a Next button
                 showPreviousButton: true, // show/hide a Previous button
                 enableFinishButton: true, // makes finish button enabled always
+            // onFinish: finishClicked,
             
                 toolbarExtraButtons: [
+                    
 			$('<button></button>').text('Finish')
 					      .addClass('btn btn-info')
 					      .attr('type', 'submit')
 					      
 					   //   .on('click', onFinishCallback())
 				// 		alert('Finsih button click');  
-			
-	
- 				    
+
+            
                       ]
             }, 
                 // onFinish: onFinishCallback,
@@ -222,7 +223,22 @@ $(document).ready(function(){
             transitionSpeed: '400'
       });
 
-      
+//      function finishClicked(){
+//          $.ajax({
+//   type:'POST',
+//   url: 'results.php',
+//   cache: false,
+//   success: function(){
+//   alert("successful post");
+//  },
+
+//  error: function(){
+//      alert("Failed to post");
+//  }
+
+// });
+// }
+     
  });
 
 </script>
