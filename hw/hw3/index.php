@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body>
+        <form class="laxForm"  method="POST" action="results.php">
 <div id="smartwizard">
     <ul>
         <li><a href="#step-1">Basic Info<br /></a></li>
@@ -18,7 +19,7 @@
 
     <div>
         <div id="step-1" class="">
-        <form class="laxForm"  method="POST" action="results.php">
+        
   <div class="row">
     <div class="col-md-7  offset-md-4">
       <label for="validationServer01">First name</label>
@@ -49,14 +50,13 @@
   Male
   </label>
 </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
-  <!--<button class="btn btn-primary" type="submit">Submit form</button>-->
-</form>
+ 
+
         </div>
         <div id="step-2" class="">
            
           <h4> What is your mile time?</h4>
-            <form class="laxForm" method="POST" action="results.php">
+            <!--<form class="laxForm" method="POST" action="results.php">-->
             <select class="custom-select" name="mileTime" type="number">
   <option selected>Select amount of minutes</option>
   <option value="<5">< 5</option>
@@ -79,7 +79,7 @@
 
 </br>
            <h4> What is your height?</h4> <!--another drop down--> 
-            <select class="custom-select" name="height">
+            <select class="custom-select" name="height" type="number">
   <option selected>Select height</option>
   <option value="<5"> <5 feet</option>
   <option value="51">5 f 1 in</option>
@@ -96,11 +96,11 @@
   <option value=">6">>=6 feet</option>
 
 </select>
-  <button class="btn btn-primary" type="submit">Submit form</button>
-</form>
+ 
+
         </div>
         <div id="step-3" class="">
-            <form class="laxForm" method="POST" action="results.php">
+            <!--<form class="laxForm" method="POST" action="results.php">-->
          <h4> What is your favorite color?</h4> <!--radio-->
             <select class="custom-select" name="color">
   <option selected>Select Color</option>
@@ -150,16 +150,18 @@
     <input class="form-check-input" type="checkbox" name="saturday" value="saturday">
     Saturday
   </label>
-<button class="btn btn-primary" type="submit">Submit form</button>
+
 </div>
 
-</form>
+
 
         </div>
        
     </div>
 
 </div>
+
+</form>
 <script type="text/javascript" src="SmartWizard-master/dist/js/jquery.smartWizard.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
