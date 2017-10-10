@@ -3,10 +3,10 @@
 //     height, gender, color, dayOfWeek, firstName, lastName, email, mileTime]
 function getGender(){
     $gender = $_POST["gender"];
-    if ($gender ='male'){
+    if ($gender = 'male'){
         echo "<div id='gender'><h1>Unfortunately Womens Lacrosse has completely different rules from mens lacrosse. We apologize, but you cannot play with us.</div></h1>";
     }
-    
+   
  
      
     

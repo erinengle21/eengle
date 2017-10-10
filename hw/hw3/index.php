@@ -43,11 +43,11 @@
    
     <div class="form-check">
   <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="gender" id="female" value="Female" checked>
+    <input class="form-check-input" type="radio" name="gender" id="female" value="female" checked>
   Female
   </label>
   <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
   Male
   </label>
 </div>
