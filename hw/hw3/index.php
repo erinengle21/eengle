@@ -122,7 +122,7 @@
 </br></br>
             <!--checkbox-->
             <h4> What days of the week can you practice?</h4> <!--if not tues and thurs, cant practice-->
-            <div class="form-check" name="dayOfWeek">
+            <div class="form-check" name="dayOfWeek" >
   <label class="form-check-label">
     <input class="form-check-input" type="checkbox" name="sunday" value="sunday">
     Sunday

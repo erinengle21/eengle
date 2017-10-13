@@ -1,9 +1,11 @@
 <?php
 // names on other page are:
 //     height, gender, color, dayOfWeek, firstName, lastName, email, mileTime]
+
+// print_r($_POST); //do this when you do not know if the info is posting or not
 function getGender(){
     $gender = $_POST["gender"];
-    if ($gender = 'male'){
+    if ($gender == 'male'){
         echo "<div id='gender'><h1>Unfortunately Womens Lacrosse has completely different rules from mens lacrosse. We apologize, but you cannot play with us.</div></h1>";
     }
    
@@ -34,9 +36,10 @@ function getName(){
    }
 }
 function dayOfWeek(){
-    $dayOfWeek = $_POST['dayOfWeek'];
-    // if (!isset $dayOfWeek == "tuesday" && $dayOfWeek == "thursday"){
-    if ($dayofWeek != "thursday" && dayofWeek != "tuesday"){
+    // $dayOfWeek = $_POST['tuesday'];
+    // $dayOfWeek = $_POST['thursday'];
+    if (!isset  ($_POST['tuesday']) && !isset($_POST['thursday'])){
+    // if ($dayofWeek != "thursday" && dayofWeek != "tuesday"){
      echo "You cannot play with us because you are not available. We only practice on Tuesdays and Thursdays. Sorry.";   
     }
     else {
