@@ -1,0 +1,29 @@
+#photo {
+height: 300px;
+width: 250px;
+}
+iframe {
+    height: 600px;
+    width: 500px;
+    float: right;
+    /*margin-top: 100px;*/
+    margin-right:400px;
+    border-color: transparent;
+}
+#index{
+   background-image: url("../img/bookBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#quoteText {
+    font-size: 200%;
+  font-family: 'Reenie Beanie', cursive;
+  font-weight: bold;
+  /*width: 400px;*/
+  float: left;
+  position: relative;
+  margin-top: 200px;
+  margin-left: 215px;
+
+}

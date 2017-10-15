@@ -63,7 +63,7 @@ function getRandomQuote() {
     $stmt -> execute();
     $record = $stmt -> fetch(); //using "fetch()" because it's expected to get ONLY ONE record        
     
-    echo  "<em>" . $record['quote']  . "</em><br />";
+    echo  "<div id='quoteText'>" . $record['quote']  . "</em><br />";
     echo "<a target='authorInfo' href='getAuthorInfo.php?authorId=".$record['authorId']."'>-" . $record['firstName'] . " " . $record['lastName'] . "</a>";
     
     //print_r($records);
@@ -83,8 +83,10 @@ function getRandomQuote() {
 <html>
     <head>
         <title> Lab 5: Random Famous Quote Generator </title>
+         <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+   <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
     </head>
-    <body>
+    <body id="index">
 
 
     <?=getRandomQuote()?>        
