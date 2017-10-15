@@ -9,7 +9,7 @@ $stmt = $conn -> prepare ($sql);
 $stmt -> execute();
 $record = $stmt -> fetch();
 
-echo $record['firstName'] . "  " . $record['biography']. "  " . "<img id='photo' src='" . $record['picture'] . "'>";
+echo $record['firstName'] . "  " . $record['lastName'] . ": " .$record['biography']. "  " . "<img id='photo' src='" . $record['picture'] . "'>";
 
 ?>
 
@@ -22,7 +22,7 @@ echo $record['firstName'] . "  " . $record['biography']. "  " . "<img id='photo'
     </head>
     <body style="background-color: rgba(255, 255, 255, 0) !important;">
 
-<h1> Author Info </h1>
+
 
 
 
