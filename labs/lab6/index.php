@@ -27,7 +27,7 @@
    
     function displayCategoryOptions() {
        global $conn;
-       $sql = "SELECT * 
+       $sql = "SELECT DISTINCT(category)
                 FROM `q_category` 
                 ORDER BY category";
         $stmt = $conn->prepare($sql);
@@ -37,16 +37,23 @@
         //print_r($records);
         
         foreach ($records as $record) {
-            echo "<option>" . $record['category'] . "</option>";
+            echo "<option";
+               if ( $record['category'] == $_GET['category']){
+                echo "selected";
+            }
+            
+            echo ">" . $record['category'] . "</option>";
+        
         }
         
    }
    
    function displayQuotes(){
        global $conn;
-       $sql = "SELECT firstName, lastName, quote
+       $sql = "SELECT firstName, lastName, quote, country
                 FROM q_author
                 NATURAL JOIN q_quote
+                NATURAL JOIN q_category
                 WHERE 1";
                 
         $namedParameters = array();
@@ -83,6 +90,20 @@
             }
         
         }
+            if (isset($_GET['country'])) {
+            
+            $sql = $sql . " AND country = :country ";
+            $namedParameters[':country'] = $_GET['country'];
+            
+            
+        }
+                 if (isset($_GET['category'])) {
+            
+            $sql = $sql . " AND category = :category ";
+            $namedParameters[':category'] = $_GET['category'];
+            
+            
+        }
                 
         //echo $sql . "<br><br>";    
         
@@ -92,7 +113,9 @@
         $stmt->execute($namedParameters);
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($records as $record) {
-            echo "<em>" . $record['quote'] . "</em> " . $record['firstName'] . " " . $record['lastName'] . "<br />";
+            echo "<div id='quoteSection'>";
+            echo "<em>" . $record['quote'] . "</em> <br /> &mdash; " . $record['firstName'] . " " . $record['lastName'] . "<br />";
+            echo "</div>";
         }                
                 
        
@@ -107,12 +130,16 @@
     <head>
         <title>Lab 6: Quote Finder</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <h1>Quote Finder</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <h2> Please enter some <br>quote guidelines:</h2>
         <form method="get">
                 <strong>Quote Content:</strong>
-                <input type="text" name="content" value="<?=$_GET['content']?>">
+                <input type="text" name="content" value="<?=$_GET['content']?>"><br/>
                 <strong>Author's Gender:</strong>
                 <input type="radio" name="gender" id="female" value="F"
                 <?php
@@ -127,33 +154,46 @@
                 echo " checked";                    
                 }?>
                 >
-                <label for="male">Male</label>
+                <label for="male">Male</label><br/>
                 <strong>Author's Birthplace:</strong>
                 <select name="country">
                     <option value="">Select a Country</option>
                     <?=displayCountryOptions()?>
-                </select>
+                </select><br/>
                 <strong>Category:</strong>  
                 <select name="category">
                     <option value="">Select a Category</option>
                     <?=displayCategoryOptions()?>
-                </select>
+                </select><br/>
                 
                 Order by: 
-                 <input type="radio" name="orderBy" id="orderByAuthor" value="orderByAuthor">
+                 <input type="radio" name="orderBy" id="orderByAuthor" value="orderByAuthor"
+                   <?php
+                if ($_GET['orderBy'] == 'orderByAuthor'){
+                echo " checked";                    
+                }?>>
                 <label for="orderByAuthor">Author</label>
-                 <input type="radio" name="orderBy" id="orderByQuote" value="orderByQuote">
-                <label for="orderByQuote">Quote</label>                
+                 <input type="radio" name="orderBy" id="orderByQuote" value="orderByQuote"
+                    <?php
+                if ($_GET['orderBy'] == 'orderByQuote'){
+                echo " checked";                    
+                }?>>
+                <label for="orderByQuote">Quote</label>   <br />             
                 <input type="submit" value="Filter" name="submit">
-        </form>
+        </form>     
+       </div>
 
-        <hr />
-
-        <div class="quotes">
-            
+    
+        <div id="quotes" class="col-md-8">
+            <h2>Quotes:</h2>
             <?=displayQuotes()?>
             
+            
         </div>
-        
+        </div>
+<footer>
+        &copy; Erin Engle
+    </footer>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>

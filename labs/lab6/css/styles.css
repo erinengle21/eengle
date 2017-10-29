@@ -1,0 +1,23 @@
+footer {
+    clear: left;
+    color: black;
+    background-color:grey;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 25px;
+    width: 100%;
+    overflow:hidden;
+}
+form {
+text-align: center;
+margin-top: 50px;
+}
+#quotes {
+    
+}
+h1 {
+  text-align: center;  
+}h2 {
+  text-align: center;  
+}
