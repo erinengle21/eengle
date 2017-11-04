@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GER['addForm'])){//checks if form was submitted
+if (isset($_GET['addForm'])){//checks if form was submitted
     include '../../dbConnection.php';
 $conn = getDatabaseConnection();
 
@@ -42,12 +42,12 @@ $stmt->execute($np);
 <h1>Add new author</h1>
 <fieldset>
     <legend>Adding New Author</legend>
-      <form>
+      <form action="admin.php">
                 First Name: <input type="text" name="firstName"/> <br />
                 Last Name: <input type="text" name="lastName"/> <br />  
                 Gender:  
              <label>Male   <input type="radio" id="genderM" name="gender" id="male" value="M" ></label>
-                <label>Felamle  <input type="radio" id="genderF" name="gender" id="female" value="F" ></label><br />
+                <label>Female  <input type="radio" id="genderF" name="gender" id="female" value="F" ></label><br />
                 Country: 
                <select name="country">
                     <option value="">Select a Country</option>
