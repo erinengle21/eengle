@@ -41,23 +41,23 @@ function authorList(){
         
         <br ><br >
 
-<form action="addAuthor.php">
+<form align="center" action="addAuthor.php">
     <input type="submit" value="Add New Author" />
 </form>
 
-<form action="logout.php">
+<form align="center" action="logout.php">
     <input type="submit" value="Logout" />
 </form>
 
 
 <br >
-
+<div id="authorDisplay">
         <?php 
         
         $authors =authorList();
         
         foreach($authors as $author) {
-                echo "[<a href='updateAuthor.php?authorId=".$author['authorId']."'>Update</a>] ";
+                echo "<button><a href='updateAuthor.php?authorId=".$author['authorId']."'>Update</a> </button>";
                 // echo "[<a href='deleteAuthor.php?authorId=".$author['authorId']."'>Remove</a>] ";
         echo "<form style='display:inline' action='deleteAuthor.php' onsubmit='return confirmDelete()'>
                    <input type='hidden' name='authorId' value='" . $author['authorId']."'>
@@ -65,11 +65,13 @@ function authorList(){
                   </form>";
             
         
-            echo $author['firstName'] . "  " . $author['lastName'] . " " . $author['country'] . "<br>";
+            echo "<div id='authorNames'>" . $author['firstName'] . "  " . $author['lastName'] . " " . $author['country'] . "<br></div>";
         }
         
         
         ?>
+        
+        </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>

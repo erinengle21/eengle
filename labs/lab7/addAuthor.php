@@ -36,6 +36,9 @@
 <html>
     <head>
         <title> Adding New Author</title>
+           <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   
     </head>
     <body>
 
@@ -43,8 +46,11 @@
         
         <fieldset>
             
-            <legend> Adding New Author </legend>
-       <button> <a href="admin.php">List of Authors</a></button>
+          
+      <form action="admin.php">
+    <input type="submit" value="List of Authors" />
+</form>
+
             <form>
                 
                 First Name: <input type="text" name="firstName"/> <br />

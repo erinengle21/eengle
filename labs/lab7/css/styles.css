@@ -97,3 +97,23 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
+
+#authorDisplay{
+text-align: center;
+}
+
+
+#authorNames {
+	font-size: large;
+	display: inline;
+	
+}
+h1{
+text-align: center;	
+}
+h2{
+text-align: center;	
+}
+form {
+	text-align: center;
+}

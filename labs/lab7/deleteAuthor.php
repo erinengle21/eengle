@@ -14,5 +14,7 @@ $stmt->execute();
 
 // header('Location:admin.php');
 
-
+   echo  ' <form action="admin.php">';
+echo     '<input type="submit" value="List of Authors" />';
+echo '</form>';
 ?>
