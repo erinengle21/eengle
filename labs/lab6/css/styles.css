@@ -14,7 +14,8 @@ text-align: center;
 margin-top: 50px;
 }
 #quotes {
-    
+    height:500px;
+    overflow: auto;
 }
 h1 {
   text-align: center;  
