@@ -1,3 +1,27 @@
+body {
+  /*background-color: rgba(200, 15, 15, 1) !important;*/
+  background-image: url("https://images5.alphacoders.com/336/336424.jpg");
+
+}
+
+body{
+   margin-top: 200px;
+      /*background-color: rgba(255, 255, 255, .6);*/
+     align-content: center;
+     color: black;
+ } 
+
+form {
+   /*background-color: transparent; */
+   /*background-color: rgba(0, 0, 0, 0);*/
+   text-align: center;
+   /*background-color: white !important;*/
+     background-color: rgba(255, 255, 255, .6);
+  border: solid 4px grey;
+}
+
+
+
 
 
 checkMark {

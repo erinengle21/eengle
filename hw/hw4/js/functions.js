@@ -186,9 +186,11 @@ function checkAnswer() {
     }
 
     var score = document.getElementById("score");
-    score.innerHTML = "You got " + scoreArray.length + "/7";
+    score.innerHTML = "<br>You got " + scoreArray.length + "/7";
+    score.style.fontSize = "300%";
 
     if (scoreArray.length >= 6) {
-        score.innerHTML = scoreArray.length + "Hooray! You got more than 80%!!!";
+        score.innerHTML = scoreArray.length + " Hooray! You got more than 80%!!!";
+         score.style.fontSize = "400%";
     }
 }
