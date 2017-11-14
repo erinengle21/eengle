@@ -2,17 +2,26 @@
 
 // var quizSubmit = document.querySelector(".quizSubmit");
 
-function correctImages(location){
+function correctImagesJS(location){
 var checkImage = document.createElement("img");
 checkImage.src = "img/checkMark.png";
 location.appendChild(checkImage);
 }
-function incorrectImages(location){
+function incorrectImagesJS(location){
 var xImage = document.createElement("img");
 xImage.src = "img/xMark.png";
 // location.appendChild(xImage);
 location.appendChild(xImage);
 }
+function correctImagesJQ(location){
+    var checkImage = $("<img/>",{ src: "img/checkMark.png"});
+    (location).append(checkImage);
+}
+function incorrectImagesJQ(location) {
+     var xImage = $("<img/>",{ src: "img/xMark.png"});
+    (location).append(xImage);
+}
+
 
 
 var scoreArray = [];
@@ -29,21 +38,21 @@ function radioBear() {
         youngBear = joey.value;
         babyBear.innerHTML = " Incorrect! " + youngBear;
         babyBear.style.backgroundColor = "rgb(255, 51, 51)";
-        incorrectImages(babyBear);
+        incorrectImagesJS(babyBear);
     }
     else if (cub.checked) {
         youngBear = cub.value;
         babyBear.innerHTML = " Correct! The name for a young bear is a " + youngBear;
         babyBear.style.backgroundColor = "rgb(0, 204, 0)";
         scoreArray.push("x");
-        correctImages(babyBear);
+        correctImagesJS(babyBear);
         
     }
     else if (fawn.checked) {
         youngBear = fawn.value;
         babyBear.innerHTML = " Incorrect! " + youngBear;
         babyBear.style.backgroundColor = "rgb(255, 51, 51)";
-        incorrectImages(babyBear);
+        incorrectImagesJS(babyBear);
     }
 
 // function checkQues2() {
@@ -54,10 +63,6 @@ function radioBear() {
 //             console.log(quest6);
 //             });
 //         } 
-        
-        
-
-
 }
 
 function checkAnswer() {
@@ -72,17 +77,17 @@ function checkAnswer() {
     speciesBear.innerHTML = v;
 
     if (v === "moonBear") {
-        speciesBear.innerHTML = " Correct," + v + " is not a species of a bear!"
+        speciesBear.innerHTML = " Correct," + v + " is not a species of a bear!";
         speciesBear.style.backgroundColor = "rgb(0, 204, 0)";
         // speciesBear.appendChild(checkImage);
-        correctImages(speciesBear);
+        correctImagesJS(speciesBear);
         scoreArray.push("x");
     }
     else if (v !== "moonBear") {
         speciesBear.innerHTML = " Incorrect," + v + " is in fact, a bear species.";
         speciesBear.style.backgroundColor = "rgb(255, 51, 51)";
         // speciesBear.appendChild(xImage);
-        incorrectImages(speciesBear);
+        incorrectImagesJS(speciesBear);
         
     }
 
@@ -94,14 +99,14 @@ function checkAnswer() {
         $("#speciesNumber").html(" Correct! The answer is " + speciesNum);
         $("#speciesNumber").css("backgroundColor", "rgb(0, 204, 0)");
         // $("#speciesNumber").append(checkImage);
-        correctImages(speciesNumber);
+        correctImagesJS(speciesNumber);
         scoreArray.push("x");
     }
     else {
           $("#speciesNumber").html(" Your answer,  " + speciesNum + ", is incorrect.");
            $("#speciesNumber").css("backgroundColor", "rgb(255, 51, 51)");
             //  $("#speciesNumber").append(xImage);
-            incorrectImages(speciesNumber);
+            incorrectImagesJS(speciesNumber);
     }
 
 
@@ -110,17 +115,17 @@ function checkAnswer() {
     var femaleName = document.getElementById("femaleName").value;
     var bearName = document.getElementById("bearName");
     if (femaleName == "female") {
-        bearName.innerHTML = " Correct! It is the name for a " + femaleName + " bear."
+        bearName.innerHTML = " Correct! It is the name for a " + femaleName + " bear.";
          bearName.style.backgroundColor = "rgb(0, 204, 0)";
-        bearName.appendChild(checkImage);
-        correctImages(bearName);
+        // bearName.appendChild(checkImage);
+        correctImagesJS(bearName);
         scoreArray.push("x");
     }
     else {
          bearName.innerHTML = " Incorrect";
          bearName.style.backgroundColor = "rgb(255, 51, 51)";
         // bearName.appendChild(xImage);
-        incorrectImages(bearName);
+        incorrectImagesJS(bearName);
     }
 
 
@@ -135,15 +140,15 @@ function checkAnswer() {
 
         $(grizzlyBear).html(" Correct! Do not run, and play dead!");
         $(grizzlyBear).css("backgroundColor", "rgb(0, 204, 0)");
-         $("#grizzlyBear").append(checkImage);
-         correctImages(grizzlyBear);
+        //  $("#grizzlyBear").append(checkImage);
+         correctImagesJQ(grizzlyBear);
         scoreArray.push("x");
     }
     else {
        $(grizzlyBear).html(" Incorrect!");
         $(grizzlyBear).css("backgroundColor", "rgb(255, 51, 51)"); 
         //  $("#grizzlyBear").append(xImage);
-        incorrectImages(grizzlyBear);
+        incorrectImagesJQ(grizzlyBear);
     }
 
 
@@ -160,15 +165,15 @@ function checkAnswer() {
 
         $(blackBear).html(" Correct! Stand your ground and fight back!");
          $(blackBear).css("backgroundColor", "rgb(0, 204, 0)");
-            $("#blackBear").append(checkImage);
-            correctImages(blackBear);
+            // $("#blackBear").append(checkImage);
+            correctImagesJQ(blackBear);
         scoreArray.push("x");
     }
     else {
            $(blackBear).html(" Incorrect!");
         $(blackBear).css("backgroundColor", "rgb(255, 51, 51)"); 
         //  $("#blackBear").append(xImage);
-        incorrectImages(blackBear);
+        incorrectImagesJQ(blackBear);
     }
 
 
@@ -179,20 +184,20 @@ function checkAnswer() {
     if (natDate == "2017-09-02") {
         $(bearDay).html(" Correct! September 2nd, 2017!");
          $(bearDay).css("backgroundColor", "rgb(0, 204, 0)");
-         correctImages(nateDate);
+         correctImagesJQ(bearDay);
         scoreArray.push("x");
     }
     else {
-           $(natDate).html(" Incorrect!");
-        $(natDate).css("backgroundColor", "rgb(255, 51, 51)"); 
+           $(bearDay).html(" Incorrect!");
+        $(bearDay).css("backgroundColor", "rgb(255, 51, 51)"); 
         //  $("#natDate").append(xImage);
-        incorrectImages(natDate);
+       incorrectImagesJQ(bearDay);
     }
 
     var score = document.getElementById("score");
     score.innerHTML = scoreArray.length;
 
     if (scoreArray.length >= 6) {
-        score.innerHTML = scoreArray.length + "Hooray! You got more than 80%!!!"
+        score.innerHTML = scoreArray.length + "Hooray! You got more than 80%!!!";
     }
 }
