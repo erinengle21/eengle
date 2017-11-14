@@ -27,8 +27,11 @@ function incorrectImagesJQ(location) {
 var scoreArray = [];
 
 
-function radioBear() {
-    var babyBear = document.getElementById('babyBear');
+
+function checkAnswer() {
+  
+
+   var babyBear = document.getElementById('babyBear');
     var youngBear = document.getElementById('radio').value;
     var joey = document.getElementById('littleBear1');
     var cub = document.getElementById('littleBear2');
@@ -36,7 +39,7 @@ function radioBear() {
 
     if (joey.checked) {
         youngBear = joey.value;
-        babyBear.innerHTML = " Incorrect! " + youngBear;
+        babyBear.innerHTML = " Your answer: " + youngBear + ", is incorrect. The correct answer is Cub.";
         babyBear.style.backgroundColor = "rgb(255, 51, 51)";
         incorrectImagesJS(babyBear);
     }
@@ -44,29 +47,17 @@ function radioBear() {
         youngBear = cub.value;
         babyBear.innerHTML = " Correct! The name for a young bear is a " + youngBear;
         babyBear.style.backgroundColor = "rgb(0, 204, 0)";
-        scoreArray.push("x");
+       scoreArray.push("x");
         correctImagesJS(babyBear);
         
     }
     else if (fawn.checked) {
         youngBear = fawn.value;
-        babyBear.innerHTML = " Incorrect! " + youngBear;
+        babyBear.innerHTML = " Your answer: " + youngBear + ", is incorrect. The correct answer is Cub.";
         babyBear.style.backgroundColor = "rgb(255, 51, 51)";
         incorrectImagesJS(babyBear);
     }
 
-// function checkQues2() {
-//             $('#radio').submit(function() {
-//             var quest6 = $('input[name=question6]:checked').val(); //radio buttons
-//             console.log(quest4);
-//             console.log(quest5);
-//             console.log(quest6);
-//             });
-//         } 
-}
-
-function checkAnswer() {
-    // radioBear();
 
     var species = document.getElementById("speciesType");
     var v = species.options[species.selectedIndex].value;
@@ -84,7 +75,7 @@ function checkAnswer() {
         scoreArray.push("x");
     }
     else if (v !== "moonBear") {
-        speciesBear.innerHTML = " Incorrect," + v + " is in fact, a bear species.";
+        speciesBear.innerHTML = " Incorrect," + v + " is in fact, a bear species. The correct answer is Moon Bear";
         speciesBear.style.backgroundColor = "rgb(255, 51, 51)";
         // speciesBear.appendChild(xImage);
         incorrectImagesJS(speciesBear);
@@ -103,7 +94,7 @@ function checkAnswer() {
         scoreArray.push("x");
     }
     else {
-          $("#speciesNumber").html(" Your answer,  " + speciesNum + ", is incorrect.");
+          $("#speciesNumber").html(" Your answer,  " + speciesNum + ", is incorrect. The correct answer is 8.");
            $("#speciesNumber").css("backgroundColor", "rgb(255, 51, 51)");
             //  $("#speciesNumber").append(xImage);
             incorrectImagesJS(speciesNumber);
@@ -122,7 +113,7 @@ function checkAnswer() {
         scoreArray.push("x");
     }
     else {
-         bearName.innerHTML = " Incorrect";
+         bearName.innerHTML = " Incorrect. Sow is an alternative name for a female bear.";
          bearName.style.backgroundColor = "rgb(255, 51, 51)";
         // bearName.appendChild(xImage);
         incorrectImagesJS(bearName);
@@ -145,7 +136,7 @@ function checkAnswer() {
         scoreArray.push("x");
     }
     else {
-       $(grizzlyBear).html(" Incorrect!");
+       $(grizzlyBear).html(" Incorrect! You should refrain from running, and play dead.");
         $(grizzlyBear).css("backgroundColor", "rgb(255, 51, 51)"); 
         //  $("#grizzlyBear").append(xImage);
         incorrectImagesJQ(grizzlyBear);
@@ -170,7 +161,7 @@ function checkAnswer() {
         scoreArray.push("x");
     }
     else {
-           $(blackBear).html(" Incorrect!");
+           $(blackBear).html(" Incorrect! YOu should stand your ground and fight back.");
         $(blackBear).css("backgroundColor", "rgb(255, 51, 51)"); 
         //  $("#blackBear").append(xImage);
         incorrectImagesJQ(blackBear);
@@ -188,14 +179,14 @@ function checkAnswer() {
         scoreArray.push("x");
     }
     else {
-           $(bearDay).html(" Incorrect!");
+           $(bearDay).html(" Incorrect! The correct answer is September 2nd, 2017");
         $(bearDay).css("backgroundColor", "rgb(255, 51, 51)"); 
         //  $("#natDate").append(xImage);
        incorrectImagesJQ(bearDay);
     }
 
     var score = document.getElementById("score");
-    score.innerHTML = scoreArray.length;
+    score.innerHTML = "You got " + scoreArray.length + "/7";
 
     if (scoreArray.length >= 6) {
         score.innerHTML = scoreArray.length + "Hooray! You got more than 80%!!!";
