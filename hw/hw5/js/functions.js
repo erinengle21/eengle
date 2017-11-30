@@ -221,9 +221,9 @@ function recordScore() {
                 complete: function(data, status) { //optional, used for debugging purposes
                    //alert(status);
                     
-       
+       JSON.stringify(data);
                    
-        $("#testScore").html("Only complete");
+        $("#testScore").html(JSON.stringify(data));
               }
                 
 

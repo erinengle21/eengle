@@ -14,7 +14,7 @@ function averageScore(){
     global $conn, $np;
       $sql = "SELECT AVG(score), COUNT(username) FROM bq_user 
       WHERE username = :username";
-    //   $_SESSION['username'];
+  
 
     $np[":username"]  = $_SESSION['username'];
 
@@ -24,7 +24,7 @@ function averageScore(){
     
          $records = $stmt->fetchAll(PDO::FETCH_ASSOC);  //retrieves all records;
       foreach ($records as $record){
-          echo "<h1 style='color: red'> Average: " . $record["AVG(score)"] . " 
+          echo "<h1> Average: " . $record["AVG(score)"] . " 
           and Count: " .   $record['COUNT(username)'] ."</h1>";
       }
 
