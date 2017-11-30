@@ -25,16 +25,21 @@ $conn = getDatabaseConnection();
      
      
 function averageScore(){
-    global $conn;
+    global $conn, $np;
       $sql = "SELECT AVG(score) FROM bq_user 
-      WHERE username = 'eengle'";
+      WHERE username = :username";
     //   $_SESSION['username'];
 
-  $stmt = $conn->prepare($sql);
-     $stmt->execute();
+    $np[":username"]  = $_SESSION['username'];
+ 
+    
+     
+     $stmt = $conn->prepare($sql);
+     $stmt->execute($np);
+    
          $records = $stmt->fetchAll(PDO::FETCH_ASSOC);  //retrieves all records;
       foreach ($records as $record){
-          echo "<h1 style='red'>" . $record["AVG(score)"] . "</h1>";
+          echo "<h1 style='color: red'>" . $record["AVG(score)"] . "</h1>";
       }
 
 }
