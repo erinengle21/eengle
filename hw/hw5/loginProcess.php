@@ -41,7 +41,7 @@ if (empty($record)) {
     $_SESSION['adminFullName'] = $record['firstName'] . " " . $record['lastName'];
    // echo $_SESSION['adminFullName'];
    //echo "Successful login!";
-   header('Location: hw5Ajax.php'); //redirects users to admin page
+   header('Location: index.php'); //redirects users to admin page
    
 }
 
