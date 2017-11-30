@@ -223,7 +223,7 @@ function recordScore() {
                     
        JSON.stringify(data);
                    
-        $("#testScore").html(JSON.stringify(data));
+        $("#testScore").html(data.responseText);
               }
                 
 
