@@ -5,7 +5,7 @@ session_start(); //starts or resumes an existing session
 //print_r($_POST); //displays values passed from login form
 
 //validates the username and password
-// include 'dbConnection.php';
+include 'dbConnection.php';
 $conn = getDatabaseConnection();
 
 $username = $_POST['username'];
