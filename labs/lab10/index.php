@@ -6,17 +6,17 @@ if(isset($_POST['submitForm'])){//checks whether the form has been submitted
     echo "<h1>ERROR: FILE SIZE TOO BIG</h1>";
     }
     else {
-print_r($_FILES);
+// print_r($_FILES);
 // echo $_FILES['myFile']['name'];
 // echo $_FILES['myFile']['size'];
 
 move_uploaded_file($_FILES['myFile']['tmp_name'], "gallery/" . $_FILES['myFile']['name']);
-// echo "<img src='gallery/" . $_FILES['myFile']['name'] . "' width='35px'> <br>";
+// echo "<img src='gallery/" . $_FILES['myFile']['name'] . "' width='35px'> <br/>";
 $files = scandir("gallery/", 1);
-print_r($files);
+// print_r($files);
 for ($i = 0; $i < count($files)-2; $i++){
     echo "<div id='gallery'>";
-    echo "<img class='images' src='gallery/" . $files[$i] . "'>";
+    echo "<img class='images' src='gallery/" . $files[$i] . "'width='35' id='img' . $i . onclick=imgSize(' . $i . ')  >";
     echo "</div>";
 } 
 }//endIf
@@ -72,6 +72,12 @@ for ($i = 0; $i < count($files)-2; $i++){
 </script>
 <?=displayImages()?>
  <script>
+ $(document).ready(function(){
+     $('img').click(function(){
+        $('img').css("width", "");
+        $(this).css("width", "300px");
+     });
+ });
 //     $(function ()
 // {
 //     var img = $("img");
@@ -91,18 +97,18 @@ for ($i = 0; $i < count($files)-2; $i++){
 //     }
    
 // });
-    if ($(e.target).hasClass('expanded')) {
-    $(".images").removeClass('expanded').stop().animate({
-        width: 280,
-        height: 187
-    }, 200);
-} else {
-    $('#gallery').find('img').fadeTo(0, 1);
-    $(".images").addClass('expanded').stop().animate({
-        width: 800,
-        height: 533
-    }, 200);
-}
+//     if ($(e.target).hasClass('expanded')) {
+//     $(".images").removeClass('expanded').stop().animate({
+//         width: 280,
+//         height: 187
+//     }, 200);
+// } else {
+//     $('#gallery').find('img').fadeTo(0, 1);
+//     $(".images").addClass('expanded').stop().animate({
+//         width: 800,
+//         height: 533
+//     }, 200);
+// }
 // });
  </script>
     </body>
