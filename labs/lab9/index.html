@@ -10,7 +10,55 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
    
 
-    <script>
+  
+
+
+    <h1> Sign Up Form </h1>
+
+    <form onsubmit="return false">
+        <fieldset>
+          
+            First Name: <input type="text">   Last Name: <input type="text">
+           <br>
+            <br> Email: <input type="text">   Phone Number: <input type="text">
+        
+            <br>
+            <br> Zip Code: <input type="text" id="zip">
+            <br> City: <span id="city"></span>
+            <br> Latitude: <span id="lat"></span>
+            <br> Longitude: <span id="long"></span>
+            <br><br> State:
+            <select id="state">
+                <option>--- Select One ---</option>
+                <option value="ak">Alaska </option>
+                <option value="az">Arizona </option>
+                <option value="ca">California </option>
+                <option value="hi">Hawaii </option>
+            </select><br> Select a County: <select id="county">
+                <option ></option>
+            </select><br> Desired Username: <input type="text" id="username"><br>
+            <span id="taken"></span>
+            <br> Password: <input id="password" type="password"><br> Type Password Again: <input id="retypepassword" type="password"><br>
+            <span id="passwordMatch"></span><br>
+            <input type="submit" value="Sign up!" onClick="checkPassword();">
+        </fieldset>
+    </form>
+
+
+  <script>
+  function checkPassword(){
+      var password = document.getElementById("password");
+      var retypepassword = document.getElementById("retypepassword");
+      var match = document.getElementById("passwordMatch");
+      var passVal = password.value;
+      var repassVal = retypepassword.value;
+      
+     if (passVal != repassVal){
+         passwordMatch.style.color = "red";
+         passwordMatch.innerHTML = "Passwords must match";
+     }
+      
+  }
         function getCity() {
 
             //alert($("#zip").val());
@@ -68,13 +116,22 @@
                 data: { "username":$("#username").val() },
                 success: function(data, status) {
                     //alert(data);
-                    
+                    var userValidation = document.getElementById("username");
+                    var takenUser = document.getElementById("taken");
                     if (data == false ) {
-                        alert("username available");
+                            userValidation.style.backgroundColor = "green";
+                         takenUser.innerHTML = "Username is available";
+                         takenUser.style.color = "green";
                     } else {
-                        alert("username NOT available!");
+                         userValidation.style.backgroundColor = "red";
+                         takenUser.innerHTML = "Username taken! Please choose another username";
+                         takenUser.style.color = "red";
+                         
                     }
                      
+                     
+
+
 
                 },
                 complete: function(data, status) { //optional, used for debugging purposes
@@ -91,38 +148,6 @@
             $("#username").change(function() { checkUsername() });
         }); //document.ready
     </script>
-
-
-    <h1> Sign Up Form </h1>
-
-    <form onsubmit="return false">
-        <fieldset>
-          
-            First Name: <input type="text">   Last Name: <input type="text">
-           <br>
-            <br> Email: <input type="text">   Phone Number: <input type="text">
-        
-            <br>
-            <br> Zip Code: <input type="text" id="zip">
-            <br> City: <span id="city"></span>
-            <br> Latitude: <span id="lat"></span>
-            <br> Longitude: <span id="long"></span>
-            <br><br> State:
-            <select id="state">
-                <option>--- Select One ---</option>
-                <option value="ak">Alaska </option>
-                <option value="az">Arizona </option>
-                <option value="ca">California </option>
-                <option value="hi">Hawaii </option>
-            </select><br> Select a County: <select id="county">
-                <option ></option>
-            </select><br> Desired Username: <input type="text" id="username"><br> Password: <input type="password"><br> Type Password Again: <input type="password"><br>
-            <input type="submit" value="Sign up!">
-        </fieldset>
-    </form>
-
-
-
 
     </body>
 
