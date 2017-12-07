@@ -1,0 +1,16 @@
+[07-Dec-2017 07:10:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/eengle/project/Restaurant-master/reservation.php:47
+Stack trace:
+#0 /home/ubuntu/workspace/eengle/project/Restaurant-master/reservation.php(47): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/eengle/project/Restaurant-master/reservation.php on line 47
+[07-Dec-2017 07:27:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dishTitle' cannot be null' in /home/ubuntu/workspace/eengle/project/Restaurant-master/voteAjax.php:47
+Stack trace:
+#0 /home/ubuntu/workspace/eengle/project/Restaurant-master/voteAjax.php(47): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/eengle/project/Restaurant-master/voteAjax.php on line 47
+[07-Dec-2017 07:27:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dishTitle' cannot be null' in /home/ubuntu/workspace/eengle/project/Restaurant-master/voteAjax.php:47
+Stack trace:
+#0 /home/ubuntu/workspace/eengle/project/Restaurant-master/voteAjax.php(47): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/eengle/project/Restaurant-master/voteAjax.php on line 47
+[07-Dec-2017 07:35:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/eengle/project/Restaurant-master/index.1.php on line 464
